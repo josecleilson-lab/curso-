@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baterias - Output Audio</title>
+    <link rel="shortcut icon" href="Megafone Azul com Ondas Sonoras.png" type="image/x-icon">
+    <style>
+        /* Estilo geral da página */
+        body {
+            background-color: rgb(39, 36, 36);
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+        }
+
+        /* Estilo do banner topo */
+        .banner-topo {
+            width: 100%;
+            max-width: 1335px;
+            height: auto;
+            display: block;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Container da vitrine (permite colocar vários produtos lado a lado) */
+        .vitrine {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Card do Produto */
+        .card-produto {
+            background-color: #17385c;
+            border-radius: 14px;
+            padding: 15px;
+            width: 240px;
+            box-shadow: 0 10px 15px rgba(53, 116, 233, 0.25);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card-produto:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 153, 255, 0.4);
+        }
+
+        /* Área do Carrossel de Imagens */
+        .carrossel {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: #121212;
+        }
+
+        .carrossel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none; /* Esconde todas por padrão */
+        }
+
+        .carrossel img.ativa {
+            display: block; /* Mostra apenas a foto atual */
+        }
+
+        /* Setas de navegação */
+        .seta {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.65);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .seta:hover {
+            background-color: rgb(0, 153, 255);
+        }
+
+        .seta.esq { left: 8px; }
+        .seta.dir { right: 8px; }
+
+        /* Link do Nome do Modelo */
+        .nome-modelo {
+            display: block;
+            margin-top: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nome-modelo:hover {
+            color: rgb(0, 153, 255);
+        }
+
+        /* Estrelas de Nível */
+        .estrelas {
+            margin-top: 8px;
+            font-size: 18px;
+            color: #ffc107; /* Cor dourada */
+            letter-spacing: 2px;
+        }
+
+        .estrelas .vazia {
+            color: #555555; /* Cor da estrela apagada */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Banner Principal -->
+    <img src="Banner musical azul com bateria e logotipo OUTPUT AUDIO.png" class="banner-topo" alt="Banner de Música Eletrônica">
+
+    <!-- Vitrine de Produtos -->
+    <div class="vitrine">
+
+        <!-- PRODUTO 1 -->
+         <a href="bateria-ludwig-Evolution.html">
+        <div class="card-produto">
+            <div class="carrossel">
+                <!-- Adicione quantas fotos quiser aqui dentro -->
+                <img src="bateria-ludwig-Evolution.webp" class="ativa" alt="Foto 1">
+                <img src="Bateria-Ludwig-Evolution2.webp" alt="Foto 2">
+                <img src="Bateria-Ludwig-Evolution3.webp" alt="Foto 3">
+
+                <!-- Botões para passar para o lado -->
+                <button class="seta esq" onclick="mudarFoto(this, -1)">&#10094;</button>
+                <button class="seta dir" onclick="mudarFoto(this, 1)">&#10095;</button>
+            </div>
+        </a>
+
+            <!-- Nome do Modelo com link para a página -->
+            <a href="baterias.html" class="nome-modelo">Ludwig Evolution</a>
+
+            <!-- Nível de Estrelas (Mude o número em data-estrelas de 1 a 5) -->
+            <div class="estrelas" data-estrelas="4"></div>
+
+
+
+             
+        </div>
+
+
+         <!-- PRODUTO 2 -->
+         <div class="card-produto">
+            <div class="carrossel">
+                <!-- Adicione quantas fotos quiser aqui dentro -->
+                <img src="Ludwig-LC170-Accent-Fuse1.webp" class="ativa" alt="Foto 1">
+                <img src="Ludwig-LC170-Accent-Fuse2.webp" alt="Foto 2">
+                <img src="Ludwig-LC170-Accent-Fuse3.webp" alt="Foto 3">
+
+                <!-- Botões para passar para o lado -->
+                <button class="seta esq" onclick="mudarFoto(this, -1)">&#10094;</button>
+                <button class="seta dir" onclick="mudarFoto(this, 1)">&#10095;</button>
+            </div>
+
+            <!-- Nome do Modelo com link para a página -->
+            <a href="baterias.html" class="nome-modelo">Ludwig LC170 Accent Fuse</a>
+
+            <!-- Nível de Estrelas (Mude o número em data-estrelas de 1 a 5) -->
+            <div class="estrelas" data-estrelas="5"></div>
+       
+    </div>
+
+
+
+     <!-- PRODUTO 3 -->
+     <div class="card-produto">
+        <div class="carrossel">
+            <!-- Adicione quantas fotos quiser aqui dentro -->
+            <img src="Ludwig-accent-Jade1.webp" class="ativa" alt="Foto 1">
+            <img src="Ludwig-accent-Jade2.webp" alt="Foto 2">
+            <img src="Ludwig-accent-Jade3.webp" alt="Foto 3">
+
+            <!-- Botões para passar para o lado -->
+            <button class="seta esq" onclick="mudarFoto(this, -1)">&#10094;</button>
+            <button class="seta dir" onclick="mudarFoto(this, 1)">&#10095;</button>
+        </div>
+
+        <!-- Nome do Modelo com link para a página -->
+        <a href="baterias.html" class="nome-modelo">Ludwig Accent Jade</a>
+
+        <!-- Nível de Estrelas (Mude o número em data-estrelas de 1 a 5) -->
+        <div class="estrelas" data-estrelas="4"></div>
+   
+</div>
+
+<!-- PRODUTO 4 -->
+<div class="card-produto">
+    <div class="carrossel">
+        <!-- Adicione quantas fotos quiser aqui dentro -->
+        <img src="Ludwig-Centennial-Drag1.webp" class="ativa" alt="Foto 1">
+        <img src="ludwig-Centennial-Drag2.webp" alt="Foto 2">
+        <img src="ludwig-Centennial-Drag3.webp" alt="Foto 3">
+
+        <!-- Botões para passar para o lado -->
+        <button class="seta esq" onclick="mudarFoto(this, -1)">&#10094;</button>
+        <button class="seta dir" onclick="mudarFoto(this, 1)">&#10095;</button>
+    </div>
+
+    <!-- Nome do Modelo com link para a página -->
+    <a href="baterias.html" class="nome-modelo">ludwig-Centennial-Drag1</a>
+
+    <!-- Nível de Estrelas (Mude o número em data-estrelas de 1 a 5) -->
+    <div class="estrelas" data-estrelas="5"></div>
+
+</div>
+
+
+<!-- PRODUTO 5 -->
+<div class="card-produto">
+    <div class="carrossel">
+        <!-- Adicione quantas fotos quiser aqui dentro -->
+        <img src="Pearl-Export1.webp" class="ativa" alt="Foto 1">
+        <img src="Pearl-Export2.webp" alt="Foto 2">
+        <img src="Pearl-Export3.webp" alt="Foto 3">
+
+        <!-- Botões para passar para o lado -->
+        <button class="seta esq" onclick="mudarFoto(this, -1)">&#10094;</button>
+        <button class="seta dir" onclick="mudarFoto(this, 1)">&#10095;</button>
+    </div>
+
+    <!-- Nome do Modelo com link para a página -->
+    <a href="baterias.html" class="nome-modelo">Pearl Export</a>
+
+    <!-- Nível de Estrelas (Mude o número em data-estrelas de 1 a 5) -->
+    <div class="estrelas" data-estrelas="4"></div>
+
+</div>
+
+
+<!-- PRODUTO 6 -->
+<div class="card-produto">
+    <div class="carrossel">
+        <!-- Adicione quantas fotos quiser aqui dentro -->
+        <img src="Pearl-Roadshow1.webp" class="ativa" alt="Foto 1">
+        <img src="Pearl-Roadshow2.webp" alt="Foto 2">
+        <img src="Pearl-Roadshow3.webp" alt="Foto 3">
+
+        <!-- Botões para passar para o lado -->
+        <button class="seta esq" onclick="mudarFoto(this, -1)">&#10094;</button>
+        <button class="seta dir" onclick="mudarFoto(this, 1)">&#10095;</button>
+    </div>
+
+    <!-- Nome do Modelo com link para a página -->
+    <a href="baterias.html" class="nome-modelo">Pearl Roadshow</a>
+
+    <!-- Nível de Estrelas (Mude o número em data-estrelas de 1 a 5) -->
+    <div class="estrelas" data-estrelas="4"></div>
+
+</div>
+
+<!-- PRODUTO 7 -->
+<div class="card-produto">
+    <div class="carrossel">
+        <!-- Adicione quantas fotos quiser aqui dentro -->
+        <img src="Pearl-Decade-Maple1.webp" class="ativa" alt="Foto 1">
+        <img src="Pearl-Decade-Maple2.webp" alt="Foto 2">
+        <img src="Pearl-Decade-Maple3.webp" alt="Foto 3">
+
+        <!-- Botões para passar para o lado -->
+        <button class="seta esq" onclick="mudarFoto(this, -1)">&#10094;</button>
+        <button class="seta dir" onclick="mudarFoto(this, 1)">&#10095;</button>
+    </div>
+
+    <!-- Nome do Modelo com link para a página -->
+    <a href="baterias.html" class="nome-modelo">Bateria Pearl Decade Maple</a>
+
+    <!-- Nível de Estrelas (Mude o número em data-estrelas de 1 a 5) -->
+    <div class="estrelas" data-estrelas="4"></div>
+
+</div>
+
+
+<!-- PRODUTO 8 -->
+<div class="card-produto">
+    <div class="carrossel">
+        <!-- Adicione quantas fotos quiser aqui dentro -->
+        <img src="Pareal-Maple-Black-Gold.webp" class="ativa" alt="Foto 1">
+        <img src="Pareal-Maple-Black-Gold2.webp" alt="Foto 2">
+        <img src="Pareal-Maple-Black-Gold3.webp" alt="Foto 3">
+
+        <!-- Botões para passar para o lado -->
+        <button class="seta esq" onclick="mudarFoto(this, -1)">&#10094;</button>
+        <button class="seta dir" onclick="mudarFoto(this, 1)">&#10095;</button>
+    </div>
+
+    <!-- Nome do Modelo com link para a página -->
+    <a href="baterias.html" class="nome-modelo">Pearl Maple Black Gold</a>
+
+    <!-- Nível de Estrelas (Mude o número em data-estrelas de 1 a 5) -->
+    <div class="estrelas" data-estrelas="5"></div>
+
+</div>
+
+
+    <script>
+        // Função para passar as fotos para o lado
+        function mudarFoto(botao, direcao) {
+            const carrossel = botao.parentElement;
+            const imagens = carrossel.querySelectorAll('img');
+            let indexAtual = 0;
+
+            imagens.forEach((img, index) => {
+                if (img.classList.contains('ativa')) {
+                    indexAtual = index;
+                    img.classList.remove('ativa');
+                }
+            });
+
+            let novoIndex = indexAtual + direcao;
+            if (novoIndex >= imagens.length) novoIndex = 0;
+            if (novoIndex < 0) novoIndex = imagens.length - 1;
+
+            imagens[novoIndex].classList.add('ativa');
+        }
+
+        // Função que desenha as estrelas automaticamente
+        document.querySelectorAll('.estrelas').forEach(container => {
+            const nota = parseInt(container.getAttribute('data-estrelas'));
+            const totalEstrelas = 5;
+            let htmlEstrelas = '';
+
+            for (let i = 1; i <= totalEstrelas; i++) {
+                if (i <= nota) {
+                    htmlEstrelas += '★'; // Estrela preenchida
+                } else {
+                    htmlEstrelas += '<span class="vazia">★</span>'; // Estrela vazia
+                }
+            }
+            container.innerHTML = htmlEstrelas;
+        });
+    </script>
+
+</body>
+</html>
