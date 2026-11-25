@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini-Projeto: Bootstrap + JavaScript</title>
+  <!-- 1. CSS do Bootstrap via CDN -->
+  <link href="https://jsdelivr.net" rel="stylesheet">
+</head>
+<body class="bg-light d-flex justify-content-center align-items-center vh-100">
+
+  <!-- 2. Componente Card do Bootstrap -->
+  <div id="meuCard" class="card shadow" style="width: 22rem;">
+    <img src="https://unsplash.com" class="card-img-top" alt="Notebook com código">
+    
+    <div class="card-body">
+      <h5 id="cardTitulo" class="card-title">Modo Claro Ativado</h5>
+      <p id="cardTexto" class="card-text">
+        Este card utiliza classes do Bootstrap 5. Clique no botão abaixo para alternar o tema e o texto dinamicamente usando JavaScript.
+      </p>
+      <button id="btnAlternar" class="btn btn-primary w-100">
+        Alternar Estilo e Texto
+      </button>
+    </div>
+  </div>
+
+  <!-- 1. JavaScript do Bootstrap via CDN -->
+  <script src="https://jsdelivr.net"></script>
+
+  <!-- 3. Comportamento em JavaScript Puro -->
+  <script>
+    // Selecionando os elementos do DOM
+    const card = document.getElementById('meuCard');
+    const titulo = document.getElementById('cardTitulo');
+    const texto = document.getElementById('cardTexto');
+    const botao = document.getElementById('btnAlternar');
+
+    let modoEscuro = false;
+
+    // Adicionando o ouvinte de eventos (addEventListener)
+    botao.addEventListener('click', () => {
+      modoEscuro = !modoEscuro; // Inverte o estado atual
+
+      if (modoEscuro) {
+        // Altera classes do Bootstrap para tema escuro
+        card.classList.add('bg-dark', 'text-white');
+        botao.classList.replace('btn-primary', 'btn-warning');
+        
+        // Altera o conteúdo de texto
+        titulo.textContent = 'Modo Escuro Ativado';
+        texto.textContent = 'O JavaScript manipulou o DOM e aplicou as classes bg-dark e text-white do Bootstrap!';
+      } else {
+        // Retorna ao estado original (tema claro)
+        card.classList.remove('bg-dark', 'text-white');
+        botao.classList.replace('btn-warning', 'btn-primary');
+        
+        // Restaura o conteúdo de texto
+        titulo.textContent = 'Modo Claro Ativado';
+        texto.textContent = 'Este card utiliza classes do Bootstrap 5. Clique no botão abaixo para alternar o tema e o texto dinamicamente usando JavaScript.';
+      }
+    });
+  </script>
+
+</body>
+</html>

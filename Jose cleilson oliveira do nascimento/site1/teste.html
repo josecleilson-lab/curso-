@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output</title>
+    <link rel="shortcut icon" href="Megafone Azul com Ondas Sonoras.png" type="image/x-icon">
+    
+    <style>
+        /* Estilo geral da página */
+        body {
+            background-color: rgb(39, 36, 36);
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Estilo do banner topo */
+        .banner-topo {
+            width: 100%;
+            max-width: 1335px;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px auto;
+        }
+
+        /* Botão com imagem (padrão grande) */
+        .btn-imagem {
+            display: inline-block;
+            border-radius: 12px;
+            box-shadow: 0 10px 10px rgba(53, 116, 233, 0.25);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            max-width: 1335px;
+            width: 100%;
+        }
+
+        .btn-imagem img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        .btn-imagem:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(212, 212, 212, 0.35);
+        }
+
+        .btn-imagem:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 5px rgb(0, 153, 255);
+        }
+
+        /* Estilo para o botão menor (Curso de Bateria) */
+        .btn-menor {
+            display: inline-block;
+            border-radius: 12px;
+            box-shadow: 0 10px 10px rgba(53, 116, 233, 0.25);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            max-width: 600px; /* Altere este valor se quiser o botão ainda menor ou maior */
+            width: 100%;
+        }
+
+        .btn-menor img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        .btn-menor:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(212, 212, 212, 0.35);
+        }
+
+        .btn-menor:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 5px rgb(0, 153, 255);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Banner Principal -->
+    <img src="Banner futurista de música eletrônica.png" class="banner-topo" alt="Banner de Música Eletrônica">
+
+    <!-- Botão de Bateria -->
+    <a href="https://www.amazon.com.br/bateria-instrumento/s?k=bateria+instrumento" target="_blank" class="btn-imagem">
+        <img src="Baterias em destaque sobre kit monocromático.png" alt="Baterias em destaque">
+    </a>
+
+    <!-- Botão de Guitarra -->
+    <a href="https://www.amazon.com.br/guitarra-profissional/s?k=guitarra+profissional" target="_blank" class="btn-imagem" style="margin-top: 20px;">
+        <img src="Guitarras em Azul Profundo.png" alt="Outro produto guitarra">
+    </a>
+    
+    <br><br>
+
+    <!-- Botão de Violão -->
+    <a href="https://www.amazon.com.br/Viol%C3%B5es/b?ie=UTF8&node=20972560011" target="_blank" class="btn-imagem" style="margin-top: 20px;">
+        <img src="Violões em Contraste Monocromático.png" alt="produto Violão">
+    </a>
+
+    <br><br>
+
+    <!-- Botão de Contrabaixo -->
+    <a href="https://www.amazon.com.br/baixo-instrumento/s?k=baixo+instrumento" target="_blank" class="btn-imagem" style="margin-top: 20px;">
+        <img src="Baixos em Destaque (1).png" alt="produto Baixo">
+    </a>
+
+    <br><br>
+
+    <!-- NOVO: Botão Menor para o Curso de Bateria -->
+    <a href="URL_DO_SEU_CURSO_AQUI" target="_blank" class="btn-menor" style="margin-top: 20px;">
+        <img src="NOME_DA_IMAGEM_DO_CURSO.png" alt="Curso de Bateria">
+    </a>
+
+    <br><br>
+
+    <!-- Botão de Equipamentos Diversos -->
+    <a href="https://youtube.com/playlist?list=PLPvdKl3L7Qu0dPsh-j8CQATQo0tWlmNK6&si=V0qTnLIt93vHDRe1" target="_blank" class="btn-imagem" style="margin-top: 20px;">
+        <img src="Diversos Equipamentos de Áudio.png" alt="produto diversos">
+    </a>
+    
+
+</body>
+</html>
+
+<!-- PRODUTO 7 -->
+<div class="card-produto">
+    <div class="carrossel">
+        <!-- Adicione quantas fotos quiser aqui dentro -->
+        <img src="Pearl-Decade-Maple1.webp" class="ativa" alt="Foto 1">
+        <img src="Pearl-Decade-Maple2.webp" alt="Foto 2">
+        <img src="Pearl-Decade-Maple3.webp" alt="Foto 3">
+
+        <!-- Botões para passar para o lado -->
+        <button class="seta esq" onclick="mudarFoto(this, -1)">&#10094;</button>
+        <button class="seta dir" onclick="mudarFoto(this, 1)">&#10095;</button>
+    </div>
+
+    <!-- Nome do Modelo com link para a página -->
+    <a href="baterias.html" class="nome-modelo">Bateria Pearl Decade Maple</a>
+
+    <!-- Nível de Estrelas (Mude o número em data-estrelas de 1 a 5) -->
+    <div class="estrelas" data-estrelas="4"></div>
+
+</div>

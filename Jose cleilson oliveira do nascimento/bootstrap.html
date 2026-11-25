@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo Bootstrap + JS</title>
+  <!-- 1. CSS do Bootstrap (para o visual) -->
+  <link href="https://jsdelivr.net" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container mt-5">
+    <div class="card p-4 shadow-sm mx-auto" style="max-width: 400px;">
+      <h4 class="mb-3">Boas-vindas</h4>
+      
+      <!-- Campo de texto -->
+      <div class="mb-3">
+        <label for="campoNome" class="form-label">Digite seu nome:</label>
+        <input type="text" id="campoNome" class="form-control" placeholder="Ex: Maria">
+      </div>
+      
+      <!-- Botão que será ouvido pelo nosso JavaScript -->
+      <button id="btnAbrir" class="btn btn-primary w-100">Confirmar</button>
+    </div>
+  </div>
+
+  <!-- Estrutura da Janela Modal do Bootstrap (começa oculta) -->
+  <div class="modal fade" id="modalSaudacao" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Mensagem</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body" id="textoModal">
+          <!-- O JavaScript vai preencher este texto -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. JS do Bootstrap (obrigatório antes do seu código) -->
+  <script src="https://jsdelivr.net"></script>
+
+  <!-- 3. Seu código JavaScript interagindo com o Bootstrap -->
+  <script>
+    // Seleciona os elementos da tela
+    const botao = document.getElementById('btnAbrir');
+    const inputNome = document.getElementById('campoNome');
+    const textoModal = document.getElementById('textoModal');
+
+    // Cria a instância do Modal do Bootstrap para controlá-lo via código
+    const modalBootstrap = new bootstrap.Modal(document.getElementById('modalSaudacao'));
+
+    // Adiciona o evento de clique no botão
+    botao.addEventListener('click', function() {
+      const nome = inputNome.value.trim();
+
+      if (nome === '') {
+        textoModal.textContent = 'Por favor, digite um nome antes de confirmar!';
+      } else {
+        textoModal.textContent = `Olá, ${nome}! O JavaScript controlou este modal do Bootstrap.`;
+      }
+
+      // Comando do Bootstrap para abrir a janela na tela
+      modalBootstrap.show();
+    });
+  </script>
+
+</body>
+</html>

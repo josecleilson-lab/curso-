@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output Audio-Ludwig Evolution</title>
+    <link rel="shortcut icon" href="Megafone Azul com Ondas Sonoras.png" type="image/x-icon">
+    <style>
+        /* Estilo geral da página */
+        body {
+            background-color: rgb(39, 36, 36);
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+        }
+
+        /* Estilo do banner topo */
+        .banner-topo {
+            width: 100%;
+            max-width: 1335px;
+            height: auto;
+            display: block;
+            margin: 0 auto 30px auto;
+        }
+    </style>
+        <!-- Banner Principal -->
+        <img src="Banner musical azul com bateria e logotipo OUTPUT AUDIO.png" class="banner-topo" alt="Banner de Música Eletrônica">
+    </head>
+    <body>
+<!-- PRODUTO 1 -->
+    <a href="bateria-ludwig-Evolution.html">
+     <div class="card-produto">
+      <div class="carrossel">
+          <!-- Adicione quantas fotos quiser aqui dentro -->
+          <img src="bateria-ludwig-Evolution.webp" class="ativa" alt="Foto 1">
+          <img src="Bateria-Ludwig-Evolution2.webp" alt="Foto 2">
+          <img src="Bateria-Ludwig-Evolution3.webp" alt="Foto 3">
+    
+          <!-- Botões para passar para o lado -->
+          <button class="seta esq" onclick="mudarFoto(this, -1)">&#10094;</button>
+          <button class="seta dir" onclick="mudarFoto(this, 1)">&#10095;</button>
+      </div>
+    </a>
+    
+<!-- Nome do Modelo com link para a página -->
+        <a href="baterias.html" class="nome-modelo">Ludwig Evolution</a>
+    
+                <!-- Nível de Estrelas (Mude o número em data-estrelas de 1 a 5) -->
+                <div class="estrelas" data-estrelas="4">
+
+    </div>
+
+    <script>
+        // Função para passar as fotos para o lado
+        function mudarFoto(botao, direcao) {
+            const carrossel = botao.parentElement;
+            const imagens = carrossel.querySelectorAll('img');
+            let indexAtual = 0;
+
+            imagens.forEach((img, index) => {
+                if (img.classList.contains('ativa')) {
+                    indexAtual = index;
+                    img.classList.remove('ativa');
+                }
+            });
+
+            let novoIndex = indexAtual + direcao;
+            if (novoIndex >= imagens.length) novoIndex = 0;
+            if (novoIndex < 0) novoIndex = imagens.length - 1;
+
+            imagens[novoIndex].classList.add('ativa');
+        }
+
+        // Função que desenha as estrelas automaticamente
+        document.querySelectorAll('.estrelas').forEach(container => {
+            const nota = parseInt(container.getAttribute('data-estrelas'));
+            const totalEstrelas = 5;
+            let htmlEstrelas = '';
+
+            for (let i = 1; i <= totalEstrelas; i++) {
+                if (i <= nota) {
+                    htmlEstrelas += '★'; // Estrela preenchida
+                } else {
+                    htmlEstrelas += '<span class="vazia">★</span>'; // Estrela vazia
+                }
+            }
+            container.innerHTML = htmlEstrelas;
+        });
+    </script>
+
+              
+
+</body>
+</html>
